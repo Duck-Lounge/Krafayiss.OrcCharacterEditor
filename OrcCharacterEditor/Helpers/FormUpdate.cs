@@ -1,4 +1,5 @@
-﻿using OrcCharacterEditor.Enumerators;
+﻿using OrcCharacterEditor.Constants;
+using OrcCharacterEditor.Enumerators;
 using OrcCharacterEditor.Models;
 using System;
 using System.Collections.Generic;
@@ -10,40 +11,56 @@ namespace OrcCharacterEditor.Helpers
 {
     internal class FormUpdate
     {
-        public static void ParametersUpdate(Character character)
+        public static CharParameters ParametersUpdate(Character character)
         {
-            // Пересчёт параметров
-            double health = 100;
-            double stamina = 100;
-            double luck = 0;
-            double crit = 5;
+            //Создание копий характеристик персонажа из входных параметров для вычислений
+            double damage = character.Damage;
+            double dexterity = character.Dexterity;
+            double intelligence = character.Intelligence;
+            double charisma = character.Сharisma;
 
-            // Пол
-            if (gender == Gender.Female) luck += 10;
-            else health += 10;
+            // Инициализация параметров дефолтными значениями
+            double charHealth = CharTraitsConst.health;
+            double charStamina = CharTraitsConst.stamina;
+            double charLuck = CharTraitsConst.luck;
+            double charCrit = CharTraitsConst.crit;
+
+
+            // у Ж +10 к харизме, у М - к здоровью
+            if (character.Gender == Gender.Female) charLuck += 10;
+            else charHealth += 10;
 
             // Сила
-            health += (damage / 5) * 2;
-            stamina += (damage / 5) * 2;
+            charHealth += (damage / 10) * 2;
+            charStamina += (damage / 10) * 2;
 
             // Ловкость
-            health += (dexterity / 5) * 2;
-            luck += (dexterity / 5) * 1;
+            charHealth += (dexterity / 10) * 2;
+            charLuck += (dexterity / 10) * 1;
 
             // Интеллект
-            luck += (intelligence / 5) * 2;
-            stamina -= (intelligence / 5) * 1;
-            if (stamina < 1) stamina = 1;
+            charLuck += (intelligence / 10) * 2;
+            charStamina -= (intelligence / 10) * 1;
+            if (charStamina < 1) charStamina = 1;
 
             // Харизма
-            luck += (charisma / 5) * 2;
-            health -= (charisma / 5) * 1;
-            if (health < 1) health = 1;
+            charLuck += (charisma / 10) * 2;
+            charHealth -= (charisma / 10) * 1;
+            if (charHealth < 1) charHealth = 1;
 
             // Критический удар
-            if (dexterity >= 50) crit += 5;
-            if (intelligence >= 50) crit += 5;
+            if (dexterity >= 100) charCrit += 10;
+            if (intelligence >= 100) charCrit += 10;
 
+            CharParameters parameters = new()
+            {
+                Health = charHealth,
+                Stamina = charStamina,
+                Luck = charLuck,
+                CritChance = charCrit
+            };
+
+            return parameters;
         }
     }
 }

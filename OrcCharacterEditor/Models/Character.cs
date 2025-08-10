@@ -13,9 +13,9 @@ namespace OrcCharacterEditor.Models
         public Gender Gender { get; set; }
         public Class Class { get; set; }
         public Image Image => CharImageMap.GetImage(Gender, Class);
-        public CharTrait Damage { get; set; }
-        public CharTrait Dexterity { get; set; }
-        public CharTrait Intelligence { get; set; }
-        public CharTrait Сharisma { get; set; }
+        public int Damage { get; set; }
+        public int Dexterity { get; set; }
+        public int Intelligence { get; set; }
+        public int Сharisma { get; set; }
     }
 }

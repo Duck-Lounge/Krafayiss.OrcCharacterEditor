@@ -14,15 +14,17 @@ namespace OrcCharacterEditor
         // Обновляем изображение и параметры при изменении радиокнопок
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            UpdateCharImage();
-            UpdateCharParameters();
+            var traits = GetTraits();
+            UpdateCharImage(traits);
+            UpdateCharParameters(traits);
         }
 
         // Ограничиваем установку значений более 200% суммарно и обновляем параметры при изменении характеристик
         private void TrackBar_Skroll(object sender, EventArgs e)
         {
             CheckTrackBarMaxValue(sender, e);
-            UpdateCharParameters();
+            var traits = GetTraits();
+            UpdateCharParameters(traits);
         }
 
         public void CheckTrackBarMaxValue(object sender, EventArgs e)
@@ -76,27 +78,21 @@ namespace OrcCharacterEditor
             return mainTraits;
         }
 
-        public void UpdateCharImage()
+        public void UpdateCharImage(Character mainTraits)
         {
-            var mainTraits = GetTraits();
-
             // Получаем картинку из маппинга
             pictureBoxChar.Image = CharImageMap.GetImage(mainTraits.Gender, mainTraits.Class);
         }
 
-        public void UpdateCharParameters()
+        public void UpdateCharParameters(Character charTraits)
         {
-            var charTraits = GetTraits();
-            FormUpdate.ParametersUpdate(charTraits);
+            var charParameters = FormUpdate.ParametersUpdate(charTraits);
 
             // Обновление интерфейса
-            labelHealth.Text = $"Health: {health}%";
-            labelStamina.Text = $"Stamina: {stamina}%";
-            labelLuck.Text = $"Luck: {luck}%";
-            labelCritChance.Text = $"Crit Chance: {crit}%";
-
-            // Обновление картинки
-            pictureBoxCharacter.Image = CharacterImageMap.GetImage(gender, classType);
+            labelHealth.Text = $"Health: {charParameters.Health}%";
+            labelStamina.Text = $"Stamina: {charParameters.Stamina}%";
+            labelLuck.Text = $"Luck: {charParameters.Luck}%";
+            labelCritChance.Text = $"Crit Chance: {charParameters.CritChance}%";
         }
     }
 }
