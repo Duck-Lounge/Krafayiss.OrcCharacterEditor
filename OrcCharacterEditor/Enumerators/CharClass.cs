@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace OrcCharacterEditor.Enumerators
 {
-    public enum CharParameterName
+    public enum CharClass
     {
-        Health,
-        Stamina,
-        Luck,
-        CritChance
+        Warrior,
+        Mage,
+        Archer
     }
 }

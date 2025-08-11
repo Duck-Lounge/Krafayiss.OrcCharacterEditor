@@ -9,6 +9,9 @@ namespace OrcCharacterEditor
         public Form1()
         {
             InitializeComponent();
+            var traits = GetTraits();
+            UpdateCharImage(traits);
+            UpdateCharParameters(traits);
         }
 
         // Обновляем изображение и параметры при изменении радиокнопок
@@ -30,24 +33,24 @@ namespace OrcCharacterEditor
         public void CheckTrackBarMaxValue(object sender, EventArgs e)
         {
             var changedTrackBar = sender as TrackBar;
-            if (changedTrackBar == null)
-                return;
+            if (changedTrackBar == null) return;
 
-            // Получаем сумму значений остальных TrackBar
-            int sum = 0;
-            foreach (var tb in new[] { trackBarDamage, trackBarDexterity, trackBarIntelligence, trackBarСharisma })
+            var trackBars = new[] { trackBarDamage, trackBarDexterity, trackBarIntelligence, trackBarСharisma };
+
+            foreach (var tb in trackBars)
             {
-                if (tb != changedTrackBar)
-                    sum += tb.Value;
-            }
+                if (tb == changedTrackBar)
+                    continue;
 
-            // Получаем максимальное допустимое значение изменяемого TrackBar
-            int maxAllowed = 200 - sum;
-            if (maxAllowed < 0) maxAllowed = 0;
+                int sumOthers = trackBars
+                    .Where(x => x != tb)
+                    .Sum(x => x.Value);
 
-            if (changedTrackBar.Value > maxAllowed)
-            {
-                changedTrackBar.Value = maxAllowed;
+                int maxAllowed = 200 - sumOthers;
+                if (maxAllowed > 100) maxAllowed = 100;
+                if (maxAllowed < 0) maxAllowed = 0;
+
+                tb.Maximum = maxAllowed;
             }
         }
 
@@ -59,10 +62,10 @@ namespace OrcCharacterEditor
             else gender = Gender.Female;
 
             // Определяем класс
-            Class classType;
-            if (radioButtonWarrior.Checked) classType = Class.Warrior;
-            else if (radioButtonArcher.Checked) classType = Class.Archer;
-            else classType = Class.Mage;
+            CharClass classType;
+            if (radioButtonWarrior.Checked) classType = CharClass.Warrior;
+            else if (radioButtonArcher.Checked) classType = CharClass.Archer;
+            else classType = CharClass.Mage;
 
             // Создаем объект персонажа
             Character mainTraits = new()

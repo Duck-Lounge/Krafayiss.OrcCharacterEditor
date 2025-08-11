@@ -51,10 +51,10 @@
             trackBarСharisma = new TrackBar();
             groupBox3 = new GroupBox();
             groupBox4 = new GroupBox();
-            labelHealth = new Label();
-            labelStamina = new Label();
-            labelLuck = new Label();
             labelCritChance = new Label();
+            labelLuck = new Label();
+            labelStamina = new Label();
+            labelHealth = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxChar).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -206,6 +206,7 @@
             // trackBarDamage
             // 
             trackBarDamage.Location = new Point(111, 172);
+            trackBarDamage.Maximum = 100;
             trackBarDamage.Name = "trackBarDamage";
             trackBarDamage.Size = new Size(433, 45);
             trackBarDamage.TabIndex = 9;
@@ -254,6 +255,7 @@
             // trackBarDexterity
             // 
             trackBarDexterity.Location = new Point(111, 223);
+            trackBarDexterity.Maximum = 100;
             trackBarDexterity.Name = "trackBarDexterity";
             trackBarDexterity.Size = new Size(433, 45);
             trackBarDexterity.TabIndex = 14;
@@ -262,6 +264,7 @@
             // trackBarIntelligence
             // 
             trackBarIntelligence.Location = new Point(111, 271);
+            trackBarIntelligence.Maximum = 100;
             trackBarIntelligence.Name = "trackBarIntelligence";
             trackBarIntelligence.Size = new Size(433, 45);
             trackBarIntelligence.TabIndex = 15;
@@ -270,6 +273,7 @@
             // trackBarСharisma
             // 
             trackBarСharisma.Location = new Point(111, 322);
+            trackBarСharisma.Maximum = 100;
             trackBarСharisma.Name = "trackBarСharisma";
             trackBarСharisma.Size = new Size(433, 45);
             trackBarСharisma.TabIndex = 16;
@@ -297,23 +301,14 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Parameters";
             // 
-            // labelHealth
+            // labelCritChance
             // 
-            labelHealth.AutoSize = true;
-            labelHealth.Location = new Point(6, 40);
-            labelHealth.Name = "labelHealth";
-            labelHealth.Size = new Size(61, 20);
-            labelHealth.TabIndex = 0;
-            labelHealth.Text = "Health:";
-            // 
-            // labelStamina
-            // 
-            labelStamina.AutoSize = true;
-            labelStamina.Location = new Point(6, 60);
-            labelStamina.Name = "labelStamina";
-            labelStamina.Size = new Size(70, 20);
-            labelStamina.TabIndex = 1;
-            labelStamina.Text = "Stamina:";
+            labelCritChance.AutoSize = true;
+            labelCritChance.Location = new Point(6, 100);
+            labelCritChance.Name = "labelCritChance";
+            labelCritChance.Size = new Size(96, 20);
+            labelCritChance.TabIndex = 3;
+            labelCritChance.Text = "Crit Chance:";
             // 
             // labelLuck
             // 
@@ -324,14 +319,23 @@
             labelLuck.TabIndex = 2;
             labelLuck.Text = "Luck:";
             // 
-            // labelCritChance
+            // labelStamina
             // 
-            labelCritChance.AutoSize = true;
-            labelCritChance.Location = new Point(6, 100);
-            labelCritChance.Name = "labelCritChance";
-            labelCritChance.Size = new Size(96, 20);
-            labelCritChance.TabIndex = 3;
-            labelCritChance.Text = "Crit Chance:";
+            labelStamina.AutoSize = true;
+            labelStamina.Location = new Point(6, 60);
+            labelStamina.Name = "labelStamina";
+            labelStamina.Size = new Size(70, 20);
+            labelStamina.TabIndex = 1;
+            labelStamina.Text = "Stamina:";
+            // 
+            // labelHealth
+            // 
+            labelHealth.AutoSize = true;
+            labelHealth.Location = new Point(6, 40);
+            labelHealth.Name = "labelHealth";
+            labelHealth.Size = new Size(61, 20);
+            labelHealth.TabIndex = 0;
+            labelHealth.Text = "Health:";
             // 
             // Form1
             // 

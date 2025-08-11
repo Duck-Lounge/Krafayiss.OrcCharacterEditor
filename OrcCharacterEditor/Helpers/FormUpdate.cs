@@ -31,21 +31,21 @@ namespace OrcCharacterEditor.Helpers
             else charHealth += 10;
 
             // Сила
-            charHealth += (damage / 10) * 2;
-            charStamina += (damage / 10) * 2;
+            charHealth += (damage / 10) * 5;
+            charStamina += (damage / 10) * 5;
 
             // Ловкость
-            charHealth += (dexterity / 10) * 2;
-            charLuck += (dexterity / 10) * 1;
+            charHealth += (dexterity / 10) * 5;
+            charLuck += (dexterity / 10) * 3;
 
             // Интеллект
-            charLuck += (intelligence / 10) * 2;
-            charStamina -= (intelligence / 10) * 1;
+            charLuck += (intelligence / 10) * 5;
+            charStamina -= (intelligence / 10) * 2;
             if (charStamina < 1) charStamina = 1;
 
             // Харизма
-            charLuck += (charisma / 10) * 2;
-            charHealth -= (charisma / 10) * 1;
+            charLuck += (charisma / 10) * 5;
+            charHealth -= (charisma / 10) * 2;
             if (charHealth < 1) charHealth = 1;
 
             // Критический удар
