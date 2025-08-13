@@ -55,6 +55,7 @@
             labelLuck = new Label();
             labelStamina = new Label();
             labelHealth = new Label();
+            labelAttack = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxChar).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -289,6 +290,7 @@
             // 
             // groupBox4
             // 
+            groupBox4.Controls.Add(labelAttack);
             groupBox4.Controls.Add(labelCritChance);
             groupBox4.Controls.Add(labelLuck);
             groupBox4.Controls.Add(labelStamina);
@@ -336,6 +338,15 @@
             labelHealth.Size = new Size(61, 20);
             labelHealth.TabIndex = 0;
             labelHealth.Text = "Health:";
+            // 
+            // labelAttack
+            // 
+            labelAttack.AutoSize = true;
+            labelAttack.Location = new Point(6, 122);
+            labelAttack.Name = "labelAttack";
+            labelAttack.Size = new Size(59, 20);
+            labelAttack.TabIndex = 4;
+            labelAttack.Text = "Attack:";
             // 
             // Form1
             // 
@@ -407,5 +418,6 @@
         private Label labelHealth;
         private Label labelLuck;
         private Label labelCritChance;
+        private Label labelAttack;
     }
 }

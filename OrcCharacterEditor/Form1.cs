@@ -97,6 +97,7 @@ namespace OrcCharacterEditor
             labelStamina.Text = $"Stamina: {charParameters.Stamina}%";
             labelLuck.Text = $"Luck: {charParameters.Luck}%";
             labelCritChance.Text = $"Crit Chance: {charParameters.CritChance}%";
+            labelAttack.Text = $"Attack: {character.CalculateAttackPower()} dps";
         }
     }
 }
