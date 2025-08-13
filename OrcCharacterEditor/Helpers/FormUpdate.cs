@@ -11,13 +11,13 @@ namespace OrcCharacterEditor.Helpers
 {
     internal class FormUpdate
     {
-        public static CharParameters ParametersUpdate(Character character)
+        public static CharParameters ParametersUpdate(CharacterBase character)
         {
             //Создание копий характеристик персонажа из входных параметров для вычислений
             double damage = character.Damage;
             double dexterity = character.Dexterity;
             double intelligence = character.Intelligence;
-            double charisma = character.Сharisma;
+            double charisma = character.Charisma;
 
             // Инициализация параметров дефолтными значениями
             double charHealth = CharTraitsConst.health;

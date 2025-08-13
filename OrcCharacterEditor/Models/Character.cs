@@ -10,12 +10,8 @@ namespace OrcCharacterEditor.Models
 {
     public class Character
     {
-        public Gender Gender { get; set; }
-        public CharClass Class { get; set; }
-        public Image Image => CharImageMap.GetImage(Gender, Class);
-        public int Damage { get; set; }
-        public int Dexterity { get; set; }
-        public int Intelligence { get; set; }
-        public int Сharisma { get; set; }
+        public string Name { get; set; }
+        public CharacterBase CharacterBase { get; set; }
+        public Image Image => CharImageMap.GetImage(CharacterBase.ImageName);
     }
 }

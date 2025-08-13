@@ -9,17 +9,17 @@ namespace OrcCharacterEditor
         public Form1()
         {
             InitializeComponent();
-            var traits = GetTraits();
-            UpdateCharImage(traits);
-            UpdateCharParameters(traits);
+            var character = GetTraits();
+            UpdateCharImage(character);
+            UpdateCharParameters(character);
         }
 
         // Обновляем изображение и параметры при изменении радиокнопок
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            var traits = GetTraits();
-            UpdateCharImage(traits);
-            UpdateCharParameters(traits);
+            var character = GetTraits();
+            UpdateCharImage(character);
+            UpdateCharParameters(character);
         }
 
         // Ограничиваем установку значений более 200% суммарно и обновляем параметры при изменении характеристик
@@ -54,42 +54,43 @@ namespace OrcCharacterEditor
             }
         }
 
-        public Character GetTraits()
-        {
+        public CharacterBase GetTraits()
+        {         
             // Определяем пол
             Gender gender;
             if (radioButtonMale.Checked) gender = Gender.Male;
             else gender = Gender.Female;
 
             // Определяем класс
-            CharClass classType;
-            if (radioButtonWarrior.Checked) classType = CharClass.Warrior;
-            else if (radioButtonArcher.Checked) classType = CharClass.Archer;
-            else classType = CharClass.Mage;
+            CharacterBase character;
+            if (radioButtonWarrior.Checked) character = new Warrior(trackBarDamage.Value,
+                                                                    trackBarDexterity.Value,
+                                                                    trackBarIntelligence.Value,
+                                                                    trackBarСharisma.Value,
+                                                                    gender);
+            else if (radioButtonArcher.Checked) character = new Archer (trackBarDamage.Value,
+                                                                        trackBarDexterity.Value,
+                                                                        trackBarIntelligence.Value,
+                                                                        trackBarСharisma.Value,
+                                                                        gender);
+            else character = new Mage(trackBarDamage.Value,
+                                      trackBarDexterity.Value,
+                                      trackBarIntelligence.Value,
+                                      trackBarСharisma.Value,
+                                      gender);
 
-            // Создаем объект персонажа
-            Character mainTraits = new()
-            {
-                Gender = gender,
-                Class = classType,
-                Damage = trackBarDamage.Value,
-                Dexterity = trackBarDexterity.Value,
-                Intelligence = trackBarIntelligence.Value,
-                Сharisma = trackBarСharisma.Value
-            };
-
-            return mainTraits;
+            return character;
         }
 
-        public void UpdateCharImage(Character mainTraits)
+        public void UpdateCharImage(CharacterBase character)
         {
             // Получаем картинку из маппинга
-            pictureBoxChar.Image = CharImageMap.GetImage(mainTraits.Gender, mainTraits.Class);
+            pictureBoxChar.Image = CharImageMap.GetImage(character.ImageName);
         }
 
-        public void UpdateCharParameters(Character charTraits)
+        public void UpdateCharParameters(CharacterBase character)
         {
-            var charParameters = FormUpdate.ParametersUpdate(charTraits);
+            var charParameters = FormUpdate.ParametersUpdate(character);
 
             // Обновление интерфейса
             labelHealth.Text = $"Health: {charParameters.Health}%";
