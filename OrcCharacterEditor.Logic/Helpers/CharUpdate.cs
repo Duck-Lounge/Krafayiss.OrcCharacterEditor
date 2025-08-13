@@ -9,10 +9,10 @@ public class CharUpdate
     public static CharParameters ParametersUpdate(CharacterBase character)
     {
         //Создание копий характеристик персонажа из входных параметров для вычислений
-        double damage = character.Damage;
-        double dexterity = character.Dexterity;
-        double intelligence = character.Intelligence;
-        double charisma = character.Charisma;
+        int damage = character.Damage;
+        int dexterity = character.Dexterity;
+        int intelligence = character.Intelligence;
+        int charisma = character.Charisma;
 
         // Инициализация параметров дефолтными значениями
         double charHealth = CharTraitsConst.health;
