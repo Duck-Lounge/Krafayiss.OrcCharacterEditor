@@ -1,6 +1,8 @@
-using OrcCharacterEditor.Enumerators;
-using OrcCharacterEditor.Helpers;
-using OrcCharacterEditor.Models;
+
+
+using OrcCharacterEditor.Logic.Enumerators;
+using OrcCharacterEditor.Logic.Helpers;
+using OrcCharacterEditor.Logic.Models;
 
 namespace OrcCharacterEditor
 {
@@ -85,7 +87,7 @@ namespace OrcCharacterEditor
         public void UpdateCharImage(CharacterBase character)
         {
             // Получаем картинку из маппинга
-            pictureBoxChar.Image = CharImageMap.GetImage(character.ImageName);
+            pictureBoxChar.Image = CharImageHelper.GetImage(character);
         }
 
         public void UpdateCharParameters(CharacterBase character)

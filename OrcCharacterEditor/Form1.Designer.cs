@@ -51,11 +51,11 @@
             trackBarСharisma = new TrackBar();
             groupBox3 = new GroupBox();
             groupBox4 = new GroupBox();
+            labelAttack = new Label();
             labelCritChance = new Label();
             labelLuck = new Label();
             labelStamina = new Label();
             labelHealth = new Label();
-            labelAttack = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxChar).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -303,6 +303,15 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Parameters";
             // 
+            // labelAttack
+            // 
+            labelAttack.AutoSize = true;
+            labelAttack.Location = new Point(6, 122);
+            labelAttack.Name = "labelAttack";
+            labelAttack.Size = new Size(59, 20);
+            labelAttack.TabIndex = 4;
+            labelAttack.Text = "Attack:";
+            // 
             // labelCritChance
             // 
             labelCritChance.AutoSize = true;
@@ -339,15 +348,6 @@
             labelHealth.TabIndex = 0;
             labelHealth.Text = "Health:";
             // 
-            // labelAttack
-            // 
-            labelAttack.AutoSize = true;
-            labelAttack.Location = new Point(6, 122);
-            labelAttack.Name = "labelAttack";
-            labelAttack.Size = new Size(59, 20);
-            labelAttack.TabIndex = 4;
-            labelAttack.Text = "Attack:";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -372,6 +372,7 @@
             Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(groupBox3);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBoxChar).EndInit();
