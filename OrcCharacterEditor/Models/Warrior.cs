@@ -1,4 +1,5 @@
 ﻿using OrcCharacterEditor.Enumerators;
+using OrcCharacterEditor.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,8 @@ namespace OrcCharacterEditor.Models
 
         public override int CalculateAttackPower()
         {
-            return (int)(Damage * 1.5 + Dexterity * 1.5);
+            CharParameters parameters = CharUpdate.ParametersUpdate(this);
+            return (int)(Damage * 1.5 + Dexterity * 1.5 + parameters.CritChance);
         }
     }
 }

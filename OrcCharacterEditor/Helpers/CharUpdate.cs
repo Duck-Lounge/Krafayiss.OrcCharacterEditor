@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OrcCharacterEditor.Helpers
 {
-    internal class FormUpdate
+    internal class CharUpdate
     {
         public static CharParameters ParametersUpdate(CharacterBase character)
         {

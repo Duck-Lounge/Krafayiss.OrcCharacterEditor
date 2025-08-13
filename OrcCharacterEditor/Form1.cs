@@ -90,7 +90,7 @@ namespace OrcCharacterEditor
 
         public void UpdateCharParameters(CharacterBase character)
         {
-            var charParameters = FormUpdate.ParametersUpdate(character);
+            var charParameters = CharUpdate.ParametersUpdate(character);
 
             // Обновление интерфейса
             labelHealth.Text = $"Health: {charParameters.Health}%";

@@ -1,4 +1,5 @@
 ﻿using OrcCharacterEditor.Enumerators;
+using OrcCharacterEditor.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,8 @@ namespace OrcCharacterEditor.Models
         public override string ClassImageNamePrefix => nameof(Mage).ToLower();
         public override int CalculateAttackPower()
         {
-            return (int)(Dexterity * 1.5 + Intelligence * 1.5);
+            CharParameters parameters = CharUpdate.ParametersUpdate(this);
+            return (int)(Dexterity * 1.5 + Intelligence * 1.5 + parameters.CritChance);
         }
     }
 }
