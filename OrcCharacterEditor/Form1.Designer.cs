@@ -48,7 +48,7 @@
             label8 = new Label();
             trackBarDexterity = new TrackBar();
             trackBarIntelligence = new TrackBar();
-            trackBarСharisma = new TrackBar();
+            trackBarCharisma = new TrackBar();
             groupBox3 = new GroupBox();
             groupBox4 = new GroupBox();
             labelAttack = new Label();
@@ -62,7 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)trackBarDamage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBarDexterity).BeginInit();
             ((System.ComponentModel.ISupportInitialize)trackBarIntelligence).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)trackBarСharisma).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)trackBarCharisma).BeginInit();
             groupBox4.SuspendLayout();
             SuspendLayout();
             // 
@@ -271,14 +271,14 @@
             trackBarIntelligence.TabIndex = 15;
             trackBarIntelligence.Scroll += TrackBar_Skroll;
             // 
-            // trackBarСharisma
+            // trackBarCharisma
             // 
-            trackBarСharisma.Location = new Point(111, 322);
-            trackBarСharisma.Maximum = 100;
-            trackBarСharisma.Name = "trackBarСharisma";
-            trackBarСharisma.Size = new Size(433, 45);
-            trackBarСharisma.TabIndex = 16;
-            trackBarСharisma.Scroll += TrackBar_Skroll;
+            trackBarCharisma.Location = new Point(111, 322);
+            trackBarCharisma.Maximum = 100;
+            trackBarCharisma.Name = "trackBarCharisma";
+            trackBarCharisma.Size = new Size(433, 45);
+            trackBarCharisma.TabIndex = 16;
+            trackBarCharisma.Scroll += TrackBar_Skroll;
             // 
             // groupBox3
             // 
@@ -355,7 +355,7 @@
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(800, 450);
             Controls.Add(groupBox4);
-            Controls.Add(trackBarСharisma);
+            Controls.Add(trackBarCharisma);
             Controls.Add(trackBarIntelligence);
             Controls.Add(trackBarDexterity);
             Controls.Add(label8);
@@ -383,7 +383,7 @@
             ((System.ComponentModel.ISupportInitialize)trackBarDamage).EndInit();
             ((System.ComponentModel.ISupportInitialize)trackBarDexterity).EndInit();
             ((System.ComponentModel.ISupportInitialize)trackBarIntelligence).EndInit();
-            ((System.ComponentModel.ISupportInitialize)trackBarСharisma).EndInit();
+            ((System.ComponentModel.ISupportInitialize)trackBarCharisma).EndInit();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             ResumeLayout(false);
@@ -412,7 +412,7 @@
         private Label label8;
         private TrackBar trackBarDexterity;
         private TrackBar trackBarIntelligence;
-        private TrackBar trackBarСharisma;
+        private TrackBar trackBarCharisma;
         private GroupBox groupBox3;
         private GroupBox groupBox4;
         private Label labelStamina;

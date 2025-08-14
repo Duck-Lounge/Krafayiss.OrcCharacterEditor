@@ -37,7 +37,7 @@ namespace OrcCharacterEditor
             var changedTrackBar = sender as TrackBar;
             if (changedTrackBar == null) return;
 
-            var trackBars = new[] { trackBarDamage, trackBarDexterity, trackBarIntelligence, trackBar—harisma };
+            var trackBars = new[] { trackBarDamage, trackBarDexterity, trackBarIntelligence, trackBarCharisma };
 
             foreach (var tb in trackBars)
             {
@@ -68,17 +68,17 @@ namespace OrcCharacterEditor
             if (radioButtonWarrior.Checked) character = new Warrior(trackBarDamage.Value,
                                                                     trackBarDexterity.Value,
                                                                     trackBarIntelligence.Value,
-                                                                    trackBar—harisma.Value,
+                                                                    trackBarCharisma.Value,
                                                                     gender);
             else if (radioButtonArcher.Checked) character = new Archer (trackBarDamage.Value,
                                                                         trackBarDexterity.Value,
                                                                         trackBarIntelligence.Value,
-                                                                        trackBar—harisma.Value,
+                                                                        trackBarCharisma.Value,
                                                                         gender);
             else character = new Mage(trackBarDamage.Value,
                                       trackBarDexterity.Value,
                                       trackBarIntelligence.Value,
-                                      trackBar—harisma.Value,
+                                      trackBarCharisma.Value,
                                       gender);
 
             return character;
