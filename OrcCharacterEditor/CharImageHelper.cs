@@ -11,6 +11,6 @@ public class CharImageHelper
             {
                 return Image.FromFile(fullPath);
             }
-        return null;
+        return new Bitmap(1, 1);
     }
 }
