@@ -1,4 +1,4 @@
-
+п»ї
 
 using OrcCharacterEditor.Logic.Enumerators;
 using OrcCharacterEditor.Logic.Helpers;
@@ -16,7 +16,7 @@ namespace OrcCharacterEditor
             UpdateCharParameters(character);
         }
 
-        // Обновляем изображение и параметры при изменении радиокнопок
+        // РћР±РЅРѕРІР»СЏРµРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ Рё РїР°СЂР°РјРµС‚СЂС‹ РїСЂРё РёР·РјРµРЅРµРЅРёРё СЂР°РґРёРѕРєРЅРѕРїРѕРє
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             var character = GetTraits();
@@ -24,7 +24,7 @@ namespace OrcCharacterEditor
             UpdateCharParameters(character);
         }
 
-        // Ограничиваем установку значений более 200% суммарно и обновляем параметры при изменении характеристик
+        // РћРіСЂР°РЅРёС‡РёРІР°РµРј СѓСЃС‚Р°РЅРѕРІРєСѓ Р·РЅР°С‡РµРЅРёР№ Р±РѕР»РµРµ 200% СЃСѓРјРјР°СЂРЅРѕ Рё РѕР±РЅРѕРІР»СЏРµРј РїР°СЂР°РјРµС‚СЂС‹ РїСЂРё РёР·РјРµРЅРµРЅРёРё С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє
         private void TrackBar_Skroll(object sender, EventArgs e)
         {
             CheckTrackBarMaxValue(sender, e);
@@ -58,12 +58,12 @@ namespace OrcCharacterEditor
 
         public CharacterBase GetTraits()
         {         
-            // Определяем пол
+            // РћРїСЂРµРґРµР»СЏРµРј РїРѕР»
             Gender gender;
             if (radioButtonMale.Checked) gender = Gender.Male;
             else gender = Gender.Female;
 
-            // Определяем класс
+            // РћРїСЂРµРґРµР»СЏРµРј РєР»Р°СЃСЃ
             CharacterBase character;
             if (radioButtonWarrior.Checked) character = new Warrior(trackBarDamage.Value,
                                                                     trackBarDexterity.Value,
@@ -86,7 +86,7 @@ namespace OrcCharacterEditor
 
         public void UpdateCharImage(CharacterBase character)
         {
-            // Получаем картинку из маппинга
+            // РџРѕР»СѓС‡Р°РµРј РєР°СЂС‚РёРЅРєСѓ РёР· РјР°РїРїРёРЅРіР°
             pictureBoxChar.Image = CharImageHelper.GetImage(character);
         }
 
@@ -94,7 +94,7 @@ namespace OrcCharacterEditor
         {
             var charParameters = CharUpdate.ParametersUpdate(character);
 
-            // Обновление интерфейса
+            // РћР±РЅРѕРІР»РµРЅРёРµ РёРЅС‚РµСЂС„РµР№СЃР°
             labelHealth.Text = $"Health: {charParameters.Health}%";
             labelStamina.Text = $"Stamina: {charParameters.Stamina}%";
             labelLuck.Text = $"Luck: {charParameters.Luck}%";
