@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrcCharacterEditor", "OrcCharacterEditor\OrcCharacterEditor.csproj", "{65680760-1301-4D73-AA49-FAC270DA3562}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrcCharacterEditor.Tests", "OrcCharacterEditor.Tests\OrcCharacterEditor.Tests.csproj", "{760A0EF4-8A00-4254-9A73-5574BC642481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrcCharacterEditor.Logic", "OrcCharacterEditor.Logic\OrcCharacterEditor.Logic.csproj", "{C78135B5-0893-489A-9B0E-F3C80A20561B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65680760-1301-4D73-AA49-FAC270DA3562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65680760-1301-4D73-AA49-FAC270DA3562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65680760-1301-4D73-AA49-FAC270DA3562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65680760-1301-4D73-AA49-FAC270DA3562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{760A0EF4-8A00-4254-9A73-5574BC642481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{760A0EF4-8A00-4254-9A73-5574BC642481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{760A0EF4-8A00-4254-9A73-5574BC642481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{760A0EF4-8A00-4254-9A73-5574BC642481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78135B5-0893-489A-9B0E-F3C80A20561B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78135B5-0893-489A-9B0E-F3C80A20561B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78135B5-0893-489A-9B0E-F3C80A20561B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78135B5-0893-489A-9B0E-F3C80A20561B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C95906D8-F4A2-419D-8D6D-1F4957BC9E39}
+	EndGlobalSection
+EndGlobal
